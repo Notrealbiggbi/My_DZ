@@ -6,3 +6,5 @@
 //         -7 -> 49
 
 
+Console.WriteLine("Введите целое число: ");
+int number = Console.ReadLine();
