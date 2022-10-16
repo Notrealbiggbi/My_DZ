@@ -6,7 +6,9 @@ Console.Write("Введите второе целое число: ");
 int number2 = Convert.ToInt32 (Console.ReadLine());
 
 int square = number2 * number2;
+Console.WriteLine($"Квадрат числа {number2} = {square}");
 
+bool result = number2 == square; // Я это записал после собственного решения 
 if (square==number1)
 {
    Console.WriteLine($"Квадрат числа {number2} равен числу {number1}"); 
