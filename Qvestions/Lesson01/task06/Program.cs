@@ -13,4 +13,4 @@ if (num % 2 <= 0)
 {
     Console.Write($"{num} является чётным");
 }
-else Console.Write($"{num} является нечётным");
+else Console.Write($"{num} не является чётным");
