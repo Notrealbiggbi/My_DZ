@@ -6,5 +6,5 @@
 Console.WriteLine("Введите трёхзначное число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-int LastDigit = num % 10; //   456 % 10 = 6     456 / 10 = 45
+int LastDigit = num % 10; //   456 % 10 = 6     456 / 10 = 45 /10 = 4 / 10 = 0
 Console.WriteLine($"Последней цифрой числа {num} является {LastDigit}");
