@@ -3,7 +3,8 @@
 Console.Write("Введите номер дня недели: ");
 int num = Convert.ToInt32 (Console.ReadLine());
 
-
+//if (num > 0 && num < 8)
+//{
 if (num == 1)
 {
     Console.WriteLine("Сегодня Понедельник");
@@ -39,3 +40,8 @@ if (num > 7) // else: Я увидел только после решения
 {
     Console.WriteLine("Такого дня недели не существует!");
 }
+//}
+// else (num > 7) 
+// {
+//     Console.WriteLine("Такого дня недели не существует!");
+// }
