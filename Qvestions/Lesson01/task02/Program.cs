@@ -8,7 +8,7 @@ int number2 = Convert.ToInt32 (Console.ReadLine());
 // {
 //    Console.WriteLine($"Число {number1} равно числу {number2}"); 
 // }
-// а если числа равные? Как прекратить выполнение программы 
+// а если числа равные? Как прекратить выполнение программы? 
 
 if (number1 > number2)
 {
