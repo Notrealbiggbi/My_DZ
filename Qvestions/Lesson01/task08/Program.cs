@@ -7,13 +7,16 @@
 Console.WriteLine("Введите число:");
 int num = Convert.ToInt32(Console.ReadLine());
 
+Console.WriteLine($"Все чётные числа от 1 до {num}");
+
 if (num > 0)
 {
     int count = 2;
 
     while (count <= num)
     {
-        Console.Write($"{count} ");
+        
+        Console.Write($" {count} ");
         count = count + 2;
     }
 }
