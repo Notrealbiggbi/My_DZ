@@ -7,6 +7,15 @@ double number2 = Convert.ToDouble (Console.ReadLine());
 Console.Write("Введите третье  число: ");
 double number3 = Convert.ToDouble (Console.ReadLine());
 
+// double a = number1, b = number2, c = number3; 
+
+// double max = a;
+
+// if(a > max) max = a;
+// if(b > max) max = b;
+// if(c > max) max = c;
+// Console.Write($"Максимальное число {max}");
+// Более оптимальное решение
 
 if (number1 > number2 && number3 < number1)
 {
