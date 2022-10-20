@@ -10,7 +10,7 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 if (num > 99 && num < 1000)
 {
-int LastDigit = num / 10 % 10; //   456 % 10 = 6     456 / 10 = 45 /10 = 4 / 10 = 0
-Console.WriteLine($"Второй цифрой числа {num} является {LastDigit}");
+int Digit = num / 10 % 10; //   456 % 10 = 6     456 / 10 = 45 /10 = 4 / 10 = 0
+Console.WriteLine($"Второй цифрой числа {num} является {Digit}");
 }
 else Console.WriteLine("Введено некоректное число");
