@@ -20,27 +20,27 @@ else if (num >1000 && num <10000)
 }
 else if (num >10000 && num <100000)
 {
-    int Digit = num / 10 / 10 % 10;
+    int Digit = num / 100 % 10;
     Console.WriteLine($"Третьей  цифрой числа {num} является {Digit}");
 }
 else if (num >100000 && num <1000000)
 {
-    int Digit = num / 10 / 10 / 10 % 10;
+    int Digit = num / 1000 % 10;
     Console.WriteLine($"Третьей  цифрой числа {num} является {Digit}");
 }
 else if (num >1000000 && num <10000000)
 {
-    int Digit = num / 10 / 10 / 10 / 10 % 10;
+    int Digit = num / 10000 % 10;
     Console.WriteLine($"Третьей  цифрой числа {num} является {Digit}");
 }
 else if (num >10000000 && num <100000000)
 {
-    int Digit = num / 10 / 10 / 10 / 10 / 10 % 10;
+    int Digit = num / 100000 % 10;
     Console.WriteLine($"Третьей  цифрой числа {num} является {Digit}");
 }
 else if (num >100000000 && num <1000000000)
 {
-    int Digit = num / 10 / 10 / 10 / 10 / 10 / 10 % 10;
+    int Digit = num / 1000000 % 10;
     Console.WriteLine($"Третьей  цифрой числа {num} является {Digit}");
 }
 else Console.WriteLine("Третьей цифры нет");
