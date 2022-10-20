@@ -15,8 +15,11 @@ if (num < 6)
 {
     Console.WriteLine("Нет, сегодня будний день");
 }
-else if (num > 5)
+else if (num > 5 )
 {
     Console.WriteLine("Да, сегодня выхоной");
 }
-else Console.WriteLine("Такого дня недели нет");
+else if(num > 7)
+{
+     Console.WriteLine("Такого дня недели нет");
+}
