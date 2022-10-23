@@ -47,7 +47,7 @@ int Num = Convert.ToInt32(Console.ReadLine());
 
 
 //             МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
-int SecondDigit(int Number )
+int Digit(int Number )
 {
     if (Number > 99 && Number < 1000) return Number % 10;
     if (Number > 1000 && Number < 10000) return Number / 10 % 10 ;
@@ -55,7 +55,7 @@ int SecondDigit(int Number )
     if (Number > 100000 && Number < 1000000) return Number / 1000 % 10;
     return 0;
 }
-int Result = SecondDigit(Num);
+int Result = Digit(Num);
 string Final = Num > 99 && Num < 1000000 
                     ? $"Третьей  цифрой числа {Num} является {Result}" 
                     : "Третьей цифры нет";
