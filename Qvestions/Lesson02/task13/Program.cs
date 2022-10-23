@@ -7,7 +7,7 @@
 
 Console.WriteLine("Введите  число: ");
 int Num = Convert.ToInt32(Console.ReadLine());
-//              НЕОПТИМАЛЬНОЕ РЕШЕНИЕ
+//            МОЁ  НЕОПТИМАЛЬНОЕ РЕШЕНИЕ
 // if (num > 99 && num < 1000)
 // {
 // int Digit = num % 10; //   456 % 10 = 6     456 / 10 = 45 /10 = 4 / 10 = 0
@@ -46,7 +46,7 @@ int Num = Convert.ToInt32(Console.ReadLine());
 // else Console.WriteLine("Третьей цифры нет");
 
 
-//              ОПТИМАЛЬНОЕ РЕШЕНИЕ
+//             МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
 int SecondDigit(int Number )
 {
     if (Number > 99 && Number < 1000) return Number % 10;

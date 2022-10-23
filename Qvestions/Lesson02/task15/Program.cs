@@ -25,7 +25,7 @@ int Num = Convert.ToInt32 (Console.ReadLine());
 //      Console.WriteLine("Такого дня недели нет");
 // }
 
-// МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
+//    МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
 
 int DaysOfTheWeek (int Number)
 {
