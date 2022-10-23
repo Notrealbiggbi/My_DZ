@@ -47,12 +47,12 @@ int Num = Convert.ToInt32(Console.ReadLine());
 
 
 //              ОПТИМАЛЬНОЕ РЕШЕНИЕ
-int SecondDigit(int Num )
+int SecondDigit(int Number )
 {
-    if (Num > 99 && Num < 1000) return Num % 10;
-    if (Num > 1000 && Num < 10000) return Num / 10 % 10 ;
-    if (Num > 10000 && Num < 100000) return Num / 100 % 10;
-    if (Num > 100000 && Num < 1000000) return Num / 1000 % 10;
+    if (Number > 99 && Number < 1000) return Number % 10;
+    if (Number > 1000 && Number < 10000) return Number / 10 % 10 ;
+    if (Number > 10000 && Number < 100000) return Number / 100 % 10;
+    if (Number > 100000 && Number < 1000000) return Number / 1000 % 10;
     return 0;
 }
 int Result = SecondDigit(Num);

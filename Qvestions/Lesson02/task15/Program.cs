@@ -9,17 +9,32 @@
 
 
 Console.Write("Введите номер дня недели: ");
-int num = Convert.ToInt32 (Console.ReadLine());
+int Num = Convert.ToInt32 (Console.ReadLine());
 
-if (num < 6)
+//     МОЁ НЕОПТИМАЛЬНОЕ РЕШЕНИЕ
+// if (num < 6)
+// {
+//     Console.WriteLine("Нет, сегодня будний день");
+// }
+// else if (num > 5 )
+// {
+//     Console.WriteLine("Да, сегодня выхоной");
+// }
+// else if(num > 7)
+// {
+//      Console.WriteLine("Такого дня недели нет");
+// }
+
+// МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
+
+int DaysOfTheWeek (int Number)
 {
-    Console.WriteLine("Нет, сегодня будний день");
+   if (Number < 6) return 1;
+   if (Number > 5 ) return 2;
+   return 0;
 }
-else if (num > 5 )
-{
-    Console.WriteLine("Да, сегодня выхоной");
-}
-else if(num > 7)
-{
-     Console.WriteLine("Такого дня недели нет");
-}
+int Result = DaysOfTheWeek(Num);
+string Final = Num > 0 && Num < 6 
+                    ? $"Нет, сегодня будний день" 
+                    : "Да, сегодня выхоной";
+Console.WriteLine(Final);
