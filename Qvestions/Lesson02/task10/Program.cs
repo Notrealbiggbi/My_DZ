@@ -25,7 +25,4 @@ int SecondDigit (int Num)
    return 0; 
 }
 int Result = SecondDigit (Num);
-string Final = Num > 99 && Num < 1000
-                    ? $"Второй  цифрой числа {Num} является {Result}" 
-                    : "Третьей цифры нет";
-Console.WriteLine(Final);
+Console.WriteLine($"Второй  цифрой числа {Num} является {Result}");
