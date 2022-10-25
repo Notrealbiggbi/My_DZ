@@ -17,12 +17,15 @@ int SecondDigit = Convert.ToInt32(Console.ReadLine());
 // }
 // else Console.WriteLine($"Не кратно остаток {FirstDigit % SecondDigit}");
 
-bool Krat (int num1,int num2, int digit, int result)
+bool Krat (int num1,int num2)
 {
-    result =digit % num1;
-    result =digit % num1;
-    if (result  == 0) return true;
+    int result = num1 % num2;
+    if (result  == 0 ) return true;
     return false;
 }
-int Obt = Krat (FirstDigit,SecondDigit);
-string End = Krat ?"Кратно":"Не кратно остаток {FirstDigit % SecondDigit}";
+bool Result = Krat (FirstDigit , SecondDigit);
+if (Result)
+{
+    Console.WriteLine("Кратно"); 
+}
+else Console.WriteLine($"Не кратно, остаток {FirstDigit % SecondDigit}");
