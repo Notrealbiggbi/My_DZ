@@ -19,10 +19,13 @@ int Num = Convert.ToInt32(Console.ReadLine());
 
 //    МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
 
-int SecondDigit (int Num)
+int SecondDigit(int num)
 {
-   if (Num > 99 && Num < 1000) return Num / 10 % 10;
-   return 0; 
+   int result = num / 10 % 10;
+   return result;
 }
-int Result = SecondDigit (Num);
+if (Num > 99 && Num < 1000)
+{
+   int Result = SecondDigit(Num);
 Console.WriteLine($"Второй  цифрой числа {Num} является {Result}");
+}
