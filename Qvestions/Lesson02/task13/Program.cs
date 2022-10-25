@@ -53,10 +53,14 @@ int Digit(int Number )
     if (Number > 1000 && Number < 10000) return Number / 10 % 10 ;
     if (Number > 10000 && Number < 100000) return Number / 100 % 10;
     if (Number > 100000 && Number < 1000000) return Number / 1000 % 10;
+    if (Number > 1000000 && Number < 10000000) return Number / 10000 % 10;
+    if (Number > 10000000 && Number < 100000000) return Number / 100000 % 10;
+    if (Number > 100000000 && Number < 1000000000) return Number / 1000000 % 10;
+    if (Number > 1000000000 && Number < 2000000000) return Number / 10000000 % 10;
     return 0;
 }
 int Result = Digit(Num);
-string Final = Num > 99 && Num < 1000000 
+string Final = Num > 99 && Num < 2000000000
                     ? $"Третьей  цифрой числа {Num} является {Result}" 
                     : "Третьей цифры нет";
 Console.WriteLine(Final);
