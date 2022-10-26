@@ -9,3 +9,31 @@
 
 // 23432 -> да
 
+Console.WriteLine("Введите пятизначное число: ");
+int Num = Convert.ToInt32(Console.ReadLine());
+
+void DigitPal(int num)
+{
+    if (num > 9999)
+    {
+        int a = num % 10;
+        int b = num / 10000;
+        int d = num / 10 % 10;
+        int e = num / 1000 % 10;
+
+        if (a == b && d == e)
+        {
+            Console.WriteLine($"{num} -> да");
+        }
+        else 
+        {
+            Console.WriteLine($"{num} -> нет");
+        }
+    }
+    else
+    {
+        Console.WriteLine($"Введено не пятизначное число");
+    }
+}
+DigitPal(Num);
+
