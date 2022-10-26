@@ -60,7 +60,7 @@ int Digit(int Number )
     return 0;
 }
 int Result = Digit(Num);
-if (Result > 99)
+if (Num > 99 )
 {
     Console.WriteLine($"Третьей  цифрой числа {Num} является {Result}");
 }
