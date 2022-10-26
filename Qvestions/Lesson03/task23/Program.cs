@@ -9,13 +9,13 @@
 Console.WriteLine("Введите число ");
 int Number = Convert.ToInt32(Console.ReadLine());
 
-void Kub(int num)
+void Kub(int number)
 {
-    if (num > 0)
+    if (number > 0)
     {
-        for (int i = 1; i <= num; i++)
+        for (int a = 1; a <= number; a++)
         {
-            Console.WriteLine($"{i}  {i * i * i}");
+            Console.WriteLine($"{a}  {a * a * a}");
         }
     }
     else

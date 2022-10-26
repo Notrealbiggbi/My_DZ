@@ -12,9 +12,9 @@ void SquareT(int num)
 {
     if (num > 0)
     {
-        for (int i = 1; i <= num; i++)
+        for (int X = 1; X <= num; X++)
         {
-            Console.WriteLine($"{i}  {i * i}");
+            Console.WriteLine($"{X}  {X * X}");
         }
     }
     else
