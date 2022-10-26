@@ -9,13 +9,13 @@
 Console.WriteLine("Введите число ");
 int Number = Convert.ToInt32(Console.ReadLine());
 
-void Kub(int number)
+void Cube(int number)
 {
     if (number > 0)
     {
         for (int a = 1; a <= number; a++)
         {
-            Console.WriteLine($"{a}  {a * a * a}");
+            Console.WriteLine($"{a,4}  {a * a * a,4}");
         }
     }
     else
@@ -23,4 +23,4 @@ void Kub(int number)
         Console.WriteLine("Введите число больше 0");
     }
 }
-Kub(Number);
+Cube(Number);

@@ -14,7 +14,7 @@ void SquareT(int num)
     {
         for (int X = 1; X <= num; X++)
         {
-            Console.WriteLine($"{X}  {X * X}");
+            Console.WriteLine($"{X,4}  {X * X,4}");
         }
     }
     else
