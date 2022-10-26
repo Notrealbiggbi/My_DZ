@@ -18,5 +18,9 @@ void Kub(int num)
             Console.WriteLine($"{i}  {i * i * i}");
         }
     }
-}    
+    else
+    {
+        Console.WriteLine("Введите число больше 0");
+    }
+}
 Kub(Number);

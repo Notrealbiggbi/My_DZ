@@ -69,13 +69,13 @@ int Num = Convert.ToInt32(Console.ReadLine());
 // МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
 int Digit(int num)
 {
-    num = Num;
-    while (num > 99 || num < 1000)
+    if (num > 99 && num < 2000000000)
+    while (num > 99 )
     {
         int res= num / 10; 
         return res;
     }
-    return num ;
+    return 0;
 }
 
 int Result = Digit(Num);

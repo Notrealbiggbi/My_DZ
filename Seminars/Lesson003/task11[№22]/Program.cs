@@ -10,12 +10,16 @@ int Number = Convert.ToInt32(Console.ReadLine());
 
 void SquareT(int num)
 {
-    if (num>0)
+    if (num > 0)
     {
-    for (int i = 1; i <= num; i++)
-    {
-        Console.WriteLine($"{i}  {i*i}");
+        for (int i = 1; i <= num; i++)
+        {
+            Console.WriteLine($"{i}  {i * i}");
+        }
     }
+    else
+    {
+        Console.WriteLine("Введите число больше 0");
     }
 }
 SquareT(Number);
