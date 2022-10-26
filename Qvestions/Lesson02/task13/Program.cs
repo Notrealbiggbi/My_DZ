@@ -47,42 +47,27 @@ int Num = Convert.ToInt32(Console.ReadLine());
 
 
 //             МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
-// int Digit(int Number )
-// {
-//     if (Number > 99 && Number < 1000) return Number % 10;
-//     if (Number > 1000 && Number < 10000) return Number / 10 % 10 ;
-//     if (Number > 10000 && Number < 100000) return Number / 100 % 10;
-//     if (Number > 100000 && Number < 1000000) return Number / 1000 % 10;
-//     if (Number > 1000000 && Number < 10000000) return Number / 10000 % 10;
-//     if (Number > 10000000 && Number < 100000000) return Number / 100000 % 10;
-//     if (Number > 100000000 && Number < 1000000000) return Number / 1000000 % 10;
-//     if (Number > 1000000000 && Number < 2000000000) return Number / 10000000 % 10;
-//     return 0;
-// }
-// int Result = Digit(Num);
-// string Final = Num > 99 && Num < 2000000000
-//                     ? $"Третьей  цифрой числа {Num} является {Result}" 
-//                     : "Третьей цифры нет";
-// Console.WriteLine(Final);
-
-
-// МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
-int Digit(int num)
+int Digit(int Number )
 {
-    if (num > 99 && num < 2000000000)
-    while (num > 99 )
-    {
-        int res= num / 10; 
-        return res;
-    }
+    if (Number > 99 && Number < 1000) return Number % 10;
+    if (Number > 1000 && Number < 10000) return Number / 10 % 10 ;
+    if (Number > 10000 && Number < 100000) return Number / 100 % 10;
+    if (Number > 100000 && Number < 1000000) return Number / 1000 % 10;
+    if (Number > 1000000 && Number < 10000000) return Number / 10000 % 10;
+    if (Number > 10000000 && Number < 100000000) return Number / 100000 % 10;
+    if (Number > 100000000 && Number < 1000000000) return Number / 1000000 % 10;
+    if (Number > 1000000000 && Number < 2000000000) return Number / 10000000 % 10;
     return 0;
 }
-
 int Result = Digit(Num);
-if (Num > 99)
+if (Result > 99)
 {
     Console.WriteLine($"Третьей  цифрой числа {Num} является {Result}");
-
 }
-else Console.WriteLine("Третьей  цифры нет ");
+else 
+{
+    Console.WriteLine("Третьей цифры нет");
+}
+
+
 
