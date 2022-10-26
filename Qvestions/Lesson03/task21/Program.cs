@@ -29,4 +29,4 @@ double Range(int x1, int y1, int z1, int x2, int y2, int z2)
     return RangeN;
 }
 double Result = Range(X1, Y1, Z1, X2, Y2, Z2);
-Console.WriteLine($"A({X1},{Y1},{Z1}): B({X2},{Y2},{Z2})-> {Math.Round(Result, 2, MidpointRounding.ToZero)}");
+Console.WriteLine($"A({X1},{Y1},{Z1}): B({X2},{Y2},{Z2}) -> {Math.Round(Result, 2, MidpointRounding.ToZero)}");
