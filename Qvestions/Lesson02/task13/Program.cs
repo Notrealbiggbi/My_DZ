@@ -67,13 +67,13 @@ int Num = Convert.ToInt32(Console.ReadLine());
 
 
 // МОЁ ОПТИМАЛЬНОЕ РЕШЕНИЕ
-int Digit(int Num)
+int Digit(int num)
 {
-    int num = 0;
-    while (num < 1000000000)
+    num = Num;
+    while (num > 99 || num < 1000)
     {
-        int res= num % 10; 
-        res++;
+        int res= num / 10; 
+        return res;
     }
     return num ;
 }

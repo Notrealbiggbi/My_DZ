@@ -6,3 +6,17 @@
 // 3 | 27
 // 4 | 64
 // 5 | 125
+Console.WriteLine("Введите число ");
+int Number = Convert.ToInt32(Console.ReadLine());
+
+void Kub(int num)
+{
+    if (num > 0)
+    {
+        for (int i = 1; i <= num; i++)
+        {
+            Console.WriteLine($"{i}  {i * i * i}");
+        }
+    }
+}    
+Kub(Number);
