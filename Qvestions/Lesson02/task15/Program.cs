@@ -37,7 +37,7 @@ if (x > 0 && x < 6)
 else Console.WriteLine("Выходной");
 }
 
-if (num < 0 && num > 7)
+if (num > 0 && num < 8)
 {
     DayOfWeek(num);
 }
