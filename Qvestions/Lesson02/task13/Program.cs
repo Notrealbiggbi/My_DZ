@@ -100,8 +100,6 @@ void Digit2(int z)
 }
 
 
-
-
 if (Num > 99 && Num < 1000)
 {
     Digit(Num);
