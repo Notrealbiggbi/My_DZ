@@ -8,19 +8,37 @@
 
 
 
+// Console.Write("Введите номер дня недели: ");
+// int num = Convert.ToInt32 (Console.ReadLine());
+
+   
+// if (num < 6)
+// {
+//     Console.WriteLine("Нет, сегодня будний день");
+// }
+// else if (num > 5 )
+// {
+//     Console.WriteLine("Да, сегодня выхоной");
+// }
+// else if(num > 7)
+// {
+//      Console.WriteLine("Такого дня недели нет");
+// }
+
 Console.Write("Введите номер дня недели: ");
 int num = Convert.ToInt32 (Console.ReadLine());
 
-   
-if (num < 6)
+void DayOfWeek (int x)
 {
-    Console.WriteLine("Нет, сегодня будний день");
-}
-else if (num > 5 )
+if (x > 0 && x < 6)
 {
-    Console.WriteLine("Да, сегодня выхоной");
+   Console.WriteLine("Будний день"); 
 }
-else if(num > 7)
+else Console.WriteLine("Выходной");
+}
+
+if (num < 0 && num > 7)
 {
-     Console.WriteLine("Такого дня недели нет");
+    DayOfWeek(num);
 }
+else Console.WriteLine("Введены некоректные данные");
