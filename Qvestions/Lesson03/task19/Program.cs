@@ -10,30 +10,58 @@
 // 23432 -> да
 
 Console.WriteLine("Введите пятизначное число: ");
-int Num = Convert.ToInt32(Console.ReadLine());
+int number = Convert.ToInt32(Console.ReadLine());
+
+// void DigitPal(int num)
+// {
+//     if (num > 9999 && num < 100000)
+//     {
+//         int a = num % 10;
+//         int b = num / 10000;
+//         int d = num / 10 % 10;
+//         int e = num / 1000 % 10;
+
+//         if (a == b && d == e)
+//         {
+//             Console.WriteLine($"{num} -> да");
+//         }
+//         else 
+//         {
+//             Console.WriteLine($"{num} -> нет");
+//         }
+//     }
+//     else
+//     {
+//         Console.WriteLine($"Введено не пятизначное число");
+//     }
+// }
+// DigitPal(Num);
+
 
 void DigitPal(int num)
 {
-    if (num > 9999)
-    {
-        int a = num % 10;
-        int b = num / 10000;
-        int d = num / 10 % 10;
-        int e = num / 1000 % 10;
+    int a = num % 10;
+    int b = num / 10000;
+    int d = num / 10 % 10;
+    int e = num / 1000 % 10;
 
-        if (a == b && d == e)
-        {
-            Console.WriteLine($"{num} -> да");
-        }
-        else 
-        {
-            Console.WriteLine($"{num} -> нет");
-        }
+    if (a == b && d == e)
+    {
+        Console.WriteLine($"{num} -> да");
     }
     else
     {
-        Console.WriteLine($"Введено не пятизначное число");
+        Console.WriteLine($"{num} -> нет");
     }
+
 }
-DigitPal(Num);
+if (number > 9999 && number < 100000)
+{
+    DigitPal(number);
+}
+else
+{
+    Console.WriteLine($"Введено не пятизначное число");
+}
+
 
