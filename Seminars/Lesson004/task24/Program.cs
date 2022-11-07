@@ -14,7 +14,8 @@ int SumNumbers(int num)
     int sum = default;
     for (int i = 1; i <= num; i++)
     {
-        sum = sum + i;
+        //sum = sum + i;
+        sum += i;
     }
     return sum;
 }
