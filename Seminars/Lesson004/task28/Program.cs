@@ -6,3 +6,22 @@
 // 5 -> 120
 
 
+Console.WriteLine("Введите число ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+int MultNumbers(int num)
+{
+    int mult = 1;
+    for (int i = 1; i <= num; i++)
+    {
+        //sum = sum * i;
+        mult *= i;
+    }
+    return mult;
+}
+if (number > 0)
+{
+int MultRes = MultNumbers(number);
+Console.WriteLine($"Произведение чисел от 1 до {number} -> {MultRes}");
+}
+else Console.WriteLine($"Вы ввели неправильное число, требуется положительное число");
