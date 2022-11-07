@@ -20,4 +20,4 @@ int SumNumbers(int num)
 }
 
 int SumRes = SumNumbers(number);
-Console.WriteLine($"{number} -> {SumRes}");
+Console.WriteLine($"Сумма чисел от 1 до {number} -> {SumRes}");
