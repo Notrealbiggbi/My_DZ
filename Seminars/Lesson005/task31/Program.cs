@@ -22,7 +22,7 @@ int[] CreateArrayRndInt(int size, int min, int max) // создаём метод
     return array;
 }
 
-void PrintArray(int[] array) // создаём массив с выводом прошлого метода
+void PrintArray(int[] array) // создаём метод с выводом прошлого метода
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
