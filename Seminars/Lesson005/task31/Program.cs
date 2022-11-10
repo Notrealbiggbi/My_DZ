@@ -33,18 +33,18 @@ void PrintArray(int[] array) // создаём метод с выводом пр
     Console.WriteLine("]");
 }
 
-int[] GetSumPositiveNegativeElem (int[] array)
+int[] GetSumPositiveNegativeElem(int[] array)
 {
     int sumPositive = 0;
     int sumNegative = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i]>0) sumPositive += array[i];
+        if (array[i] > 0) sumPositive += array[i];
         else sumNegative += array[i];
     }
     // int[] res = {sumPositive,sumNegative};
     // return res;                                           Можно создать переменную.
-    return new int[]{sumPositive,sumNegative};
+    return new int[] { sumPositive, sumNegative };
 }
 
 
