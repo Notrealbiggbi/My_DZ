@@ -43,5 +43,5 @@ int[] InversionArray(int[] array)
 
 int[] arr = CreateArrayRndInt(4, -10, 10); // создаём переменную для запроса метода
 PrintArray(arr); // печатаем метод
-int[] reasultInversionArray = InversionArray(arr);
-PrintArray(reasultInversionArray);
+InversionArray(arr);
+PrintArray(arr);
