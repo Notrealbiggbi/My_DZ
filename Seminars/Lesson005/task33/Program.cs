@@ -41,7 +41,9 @@ int[] arr = CreateArrayRndInt(12, -9, 9);
 PrintArray(arr);
 Console.WriteLine("Введите искомое число");
 int number = Convert.ToInt32(Console.ReadLine());
-// if (FindNUmArray(arr, number)) 
+Console.WriteLine(FindNUmArray(arr, number)?"Да": "Нет");
+
+// if (FindNUmArray(arr, number))     МОЖНО И ТАК
 // {
 //     Console.WriteLine("Да");
 // }
@@ -50,4 +52,3 @@ int number = Convert.ToInt32(Console.ReadLine());
 //     Console.WriteLine("Нет");
 // }
 
-Console.WriteLine(FindNUmArray(arr, number)?"Да": "Нет");
