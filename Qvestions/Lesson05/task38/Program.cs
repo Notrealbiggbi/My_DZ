@@ -22,25 +22,24 @@ void PrintArray(double[] array) // создаём метод с выводом �
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i]);
-        if (i < array.Length - 1) Console.Write(" ,");
+        if (i < array.Length - 1) Console.Write("|");
     }
     Console.WriteLine("]");
 }
 
-double FindMinMaxNumber(double[] array)
+double[] FindMinMaxNumber(double[] array)
 {
+    double max = array[0];
+    double min = array[0];
     for (int i = 0; i < array.Length; i++)
     {
-        int min = 0;
-        int max = 0;
-        
+        if (array[i] > max) max = array[i];
+        if (array[i] < min) min = array[i];
     }
-}
-
-double DiffMinMaxNumber(int size, int min, int max)
-{
-
+    return new double[] { max, min };
 }
 
 double[] arr = CreateArrayRndDouble(5, 0, 10);
 PrintArray(arr);
+double[] res = FindMinMaxNumber(arr);
+Console.WriteLine($"Разница между максимальным и минимальным элементов массива = {Math.Round(res[0] - res[1], 2, MidpointRounding.ToZero)} ");
