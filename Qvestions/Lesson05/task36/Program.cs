@@ -41,4 +41,4 @@ int[] GetSumNegativeElem(int[] array)
 int[] arr = CreateArrayRndInt(13, 0, 10);
 PrintArray(arr);
 int[] countRes = GetSumNegativeElem(arr);
-Console.WriteLine($"Сумма нечётных  эллементов массива  = {countRes[0]}");
+Console.WriteLine($"Сумма эллементов, стоящих на нечётных позициях массива  = {countRes[0]}");
