@@ -4,21 +4,21 @@
 
 // 1, -7, 567, 89, 223-> 3
 
-Console.WriteLine("Введите число:  ");
-int number = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите размер массива:  ");
+int size = Convert.ToInt32(Console.ReadLine());
 
-int[] CreateArrayRndInt(int size, int min, int max) 
+int[] CreateArrayRndInt(int sizearr)
 {
-    Random rnd = new Random();
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
+    int[] array = new int[sizearr];
+    Console.WriteLine("Введите числа через Enter ");
+    for (int i = 0; i < sizearr; i++)
     {
-        array[i] = rnd.Next(min, max + 1);
+        array[i] = Convert.ToInt32(Console.ReadLine());
     }
     return array;
 }
 
-void PrintArray(int[] array) 
+void PrintArray(int[] array)
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
@@ -29,5 +29,17 @@ void PrintArray(int[] array)
     Console.WriteLine("]");
 }
 
-int[] res = CreateArrayRndInt(5,3,9);
+int CountElements(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > 0) count++;
+    }
+    return count;
+}
+
+int[] res = CreateArrayRndInt(size);
 PrintArray(res);
+int result = CountElements(res);
+Console.WriteLine($"Чисел больше нуля = {result}.");
