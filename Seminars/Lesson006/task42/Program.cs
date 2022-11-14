@@ -23,7 +23,7 @@ int ConvertToBin(int num)
 int ReverseNum(int num2)
 {
     int result = 0;
-    while (num2 > 9)
+    while (num2 > 9 || num2 > 0)
     {
         result += num2 % 10;
         result *= 10;
@@ -36,3 +36,9 @@ int ReverseNum(int num2)
 int res = ConvertToBin(number);
 int result = ReverseNum(res);
 Console.Write(result);
+
+
+
+// Вариант 2.
+
+
