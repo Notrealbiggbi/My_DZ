@@ -20,16 +20,16 @@ int ConvertToBin(int num)
     return result;
 }
 
-int ReverseNum(int num)
+int ReverseNum(int num2)
 {
     int result = 0;
-    while (num > 9)
+    while (num2 > 9)
     {
-        result += num % 10;
+        result += num2 % 10;
         result *= 10;
-        num /= 10;
+        num2 /= 10;
     }
-    result += num % 10;
+    result += num2 % 10;
     return result;
 }
 
