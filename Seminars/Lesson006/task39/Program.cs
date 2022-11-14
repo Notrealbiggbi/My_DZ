@@ -27,7 +27,7 @@ void PrintArray(int[] array) // создаём метод с выводом пр
     Console.WriteLine("]");
 }
 
-void ReverseArray(int[] array)
+void ReverseArray(int[] array) // массив который разворачивает массив
 {
     for (int i = 0; i < array.Length / 2; i++)
     {
