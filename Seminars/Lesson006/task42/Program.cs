@@ -36,9 +36,3 @@ int ReverseNum(int num2)
 int res = ConvertToBin(number);
 int result = ReverseNum(res);
 Console.Write(result);
-
-
-
-// Вариант 2.
-
-
