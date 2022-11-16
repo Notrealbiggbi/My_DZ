@@ -12,13 +12,31 @@ Console.WriteLine("Введите число k2:  ");
 int k2 = Convert.ToInt32(Console.ReadLine());
 
 
-void lineIntersection(int B1, int K1, int B2, int K2)
+// void lineIntersection(int B1, int K1, int B2, int K2)
+// {
+//     double num1 = K2 - K1;
+//     double num2 = B1 - B2;
+//     double x = num2 / num1;
+//     double y = K2 * x + B2;
+//     Console.WriteLine($"b1 = {B1}, k1 = {K1}, b2 = {B2}, k2 = {K2} ->({Math.Round(x, 2, MidpointRounding.ToZero)}), ({Math.Round(y, 2, MidpointRounding.ToZero)}) ");
+// }
+
+// lineIntersection(b1, k1, b2, k2);
+
+
+double[] lineIntersection(int B1, int K1, int B2, int K2)
 {
     double num1 = K2 - K1;
     double num2 = B1 - B2;
+    
     double x = num2 / num1;
+    
+    
     double y = K2 * x + B2;
-    Console.WriteLine($"b1 = {B1}, k1 = {K1}, b2 = {B2}, k2 = {K2} ->({Math.Round(x, 2, MidpointRounding.ToZero)}), ({Math.Round(y, 2, MidpointRounding.ToZero)}) ");
+    return new double[]{x,y};
+    
 }
 
-lineIntersection(b1, k1, b2, k2);
+double[] res = lineIntersection (b1, k1, b2, k2);
+Console.WriteLine($"b1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} ->({Math.Round(res[0], 2, MidpointRounding.ToZero)}), ({Math.Round(res[1], 2, MidpointRounding.ToZero)}) ");
+
