@@ -38,7 +38,7 @@ int[,] SumElementsMatrix(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            
+            i(0,0) += j(1,1);
         }
     }
 }
@@ -47,3 +47,6 @@ int[,] SumElementsMatrix(int[,] matrix)
 
 int[,] mat = CreateMatrixRndInt(3, 4, 0, 10); // создаём переменную для запроса метода
 PrintMatrix(mat); // печатаем метод
+Console.WriteLine();
+SumElementsMatrix(mat);
+PrintMatrix(mat);
