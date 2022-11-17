@@ -7,7 +7,7 @@
 Console.WriteLine("Введите размер массива:  ");
 int size = Convert.ToInt32(Console.ReadLine());
 
-int[] CreateArrayRndInt(int sizearr)
+int[] CreateArrayInt(int sizearr)
 {
     int[] array = new int[sizearr];
     Console.WriteLine("Введите числа через Enter ");
@@ -39,7 +39,7 @@ int CountElements(int[] array)
     return count;
 }
 
-int[] res = CreateArrayRndInt(size);
+int[] res = CreateArrayInt(size);
 PrintArray(res);
 int result = CountElements(res);
 Console.WriteLine($"Чисел больше нуля = {result}.");
