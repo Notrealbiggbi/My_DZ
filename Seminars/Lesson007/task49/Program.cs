@@ -49,6 +49,6 @@ int[,] HonestlementsMatrix(int[,] matrix)
 
 int[,] mat = CreateMatrixRndInt(3, 4, 0, 10); // создаём переменную для запроса метода
 PrintMatrix(mat); // печатаем метод
-
+Console.WriteLine();
 HonestlementsMatrix(mat);
 PrintMatrix(mat);
