@@ -25,28 +25,31 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i,j], 5}   |");
-            else Console.Write($"{matrix[i,j], 5} ");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],5}   |");
+            else Console.Write($"{matrix[i, j],5} ");
         }
         Console.WriteLine("  |");
     }
 }
 
-int[,] SumElementsMatrix(int[,] matrix)
+int SumElementsMatrix(int[,] matrix)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            i(0,0) += j(1,1);
-        }
-    }
+    int sum = 0;
+    int minLength = matrix.GetLength(1);
+    if (matrix.GetLength(0) < matrix.GetLength(1)) minLength = matrix.GetLength(0);
+    for (int i = 0; i < minLength; i++) sum += matrix[i, i];
+    return sum;
 }
 
 
 
-int[,] mat = CreateMatrixRndInt(3, 4, 0, 10); // создаём переменную для запроса метода
-PrintMatrix(mat); // печатаем метод
-Console.WriteLine();
-SumElementsMatrix(mat);
+// int[,] mat = CreateMatrixRndInt(3, 4, 0, 10); // создаём переменную для запроса метода
+// PrintMatrix(mat); // печатаем метод
+// Console.WriteLine();
+// SumElementsMatrix(mat);
+// PrintMatrix(mat);
+
+int[,] mat = CreateMatrixRndInt(3, 5, 0, 10);
 PrintMatrix(mat);
+int res = SumElementsMatrix(mat);
+Console.WriteLine($"Сумма элементов диагонали равна: {res}");
