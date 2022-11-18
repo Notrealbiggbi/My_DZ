@@ -7,13 +7,13 @@
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
 
-int[,] CreateMatrixRndInt(int rows, int colums, int min, int max) // создаём метод где используем расчёт двумерного массива с случайными числами
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) // создаём метод где используем расчёт двумерного массива с случайными числами
 {
     Random rnd = new Random();
-    int[,] matrix = new int[rows, colums];
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    int[,] matrix = new int[rows, columns];
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
             matrix[i, j] = rnd.Next(min, max + 1);
         }
@@ -38,27 +38,25 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 
 double AverageMatrixRndIntColums(int[,] matrix)
 {
-    double average = 0;
-
-    for (int i = 0; i < matrix.GetLength(0); i++)
-
+    double aver = 0;
+    double sum = 0;
+    for (int i = 0; i < matrix.GetLength(0); i++) // строки
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++) // столбцы
         {
-            int col =  0;
-            col += j;
-            int sum =  ;
-            average =sum / col ;
-
-
+            if ( j == i)
+            {
+                sum = sum + matrix[i, 0];
+            }
         }
     }
-
-    return average;
+    aver = sum / matrix.GetLength(0);
+    return  aver;
 }
 
 
-int[,] mat = CreateMatrixRndInt(2, 2, 0, 4);
+int[,] mat = CreateMatrixRndInt(3, 3, 0, 10);
 PrintMatrix(mat);
 double res = AverageMatrixRndIntColums(mat);
-Console.WriteLine($"Среднее арифметическое каждого столбца: {Math.Round(res, 2, MidpointRounding.ToZero)}");
+Console.WriteLine($"Среднее арифметическое -> {Math.Round(res, 2, MidpointRounding.ToZero)}");
+// Console.WriteLine($"Среднее арифметическое каждого столбца: {Math.Round(res, 2, MidpointRounding.ToZero)}");

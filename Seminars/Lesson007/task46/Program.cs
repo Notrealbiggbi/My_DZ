@@ -8,10 +8,10 @@
 
 
 
-int[,] CreateMatrixRndInt(int rows, int colums, int min, int max) // создаём метод где используем расчёт двумерного массива с случайными числами
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) // создаём метод где используем расчёт двумерного массива с случайными числами
 {
     Random rnd = new Random();
-    int[,] matrix = new int[rows, colums];
+    int[,] matrix = new int[rows, columns];
     for (int i = 0; i < matrix.GetLength(0); i++) // строки
     {
         for (int j = 0; j < matrix.GetLength(1); j++) // столбцы

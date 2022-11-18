@@ -48,28 +48,29 @@ int FindMatrixElements(int num1, int num2, int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (num1 == i && num2 == j) return dig = matrix[i,j];
+            if (num1 - 1 == i && num2 - 1 == j) return dig = matrix[i, j];  // Находим эллемент массива, правда для удобства 
+                                                                            // я сделал чтобы программа видела индекс, а человек номер столбца и строки
         }
     }
     return dig;
 }
 
 
-int[,] mat = CreateMatrixRndInt(3, 4, 0, 10); // создаём переменную для запроса метода
+int[,] mat = CreateMatrixRndInt(5, 5, -10, 10); // создаём переменную для запроса метода
 PrintMatrix(mat); // печатаем метод
 
-Console.Write("Введите позиции элемента в двумерном массиве через запятую :  ");
+Console.Write("Введите позицию элемента в двумерном массиве через запятую :  ");
 string[] tokens = Console.ReadLine().Split(',');
 int number1 = int.Parse(tokens[0]);
 int number2 = int.Parse(tokens[1]);
 // int number1 = Convert.ToInt32(Console.ReadLine());
 // int number2 = Convert.ToInt32(Console.ReadLine());
 int res = FindMatrixElements(number1, number2, mat);
-if(res == 0)
+if (res > 0 || res < 0)
 {
-   Console.WriteLine($"{number1},{number2} -> такого элемента в массиве нет"); 
+    Console.WriteLine($"{number1},{number2} -> эллемент равен {res}");
 }
-else Console.WriteLine($"{number1},{number2} -> эллемент {res}"); 
+else Console.WriteLine($"{number1},{number2} -> такого элемента в массиве нет");
 
 // Console.WriteLine($"{num} -> такого элемента в массиве нет");
 // Console.WriteLine($"{num} -> эллемент {}");
