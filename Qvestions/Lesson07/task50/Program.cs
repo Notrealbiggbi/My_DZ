@@ -56,7 +56,7 @@ int FindMatrixElements(int num1, int num2, int[,] matrix)
 }
 
 
-int[,] mat = CreateMatrixRndInt(5, 5, -10, 10); // создаём переменную для запроса метода
+int[,] mat = CreateMatrixRndInt(5, 2, -10, 10); // создаём переменную для запроса метода
 PrintMatrix(mat); // печатаем метод
 
 Console.Write("Введите позицию элемента в двумерном массиве через запятую :  ");

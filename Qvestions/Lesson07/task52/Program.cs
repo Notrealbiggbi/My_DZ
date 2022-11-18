@@ -44,10 +44,11 @@ double AverageMatrixRndIntColums(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++) // столбцы
         {
-            if ( j == i)
+            if ( i == j)
             {
                 sum = sum + matrix[i, 0];
             }
+            
         }
     }
     aver = sum / matrix.GetLength(0);
@@ -58,5 +59,5 @@ double AverageMatrixRndIntColums(int[,] matrix)
 int[,] mat = CreateMatrixRndInt(3, 3, 0, 10);
 PrintMatrix(mat);
 double res = AverageMatrixRndIntColums(mat);
-Console.WriteLine($"Среднее арифметическое -> {Math.Round(res, 2, MidpointRounding.ToZero)}");
+Console.WriteLine($"Среднее арифметическое первого столбца -> {Math.Round(res, 2, MidpointRounding.ToZero)}");
 // Console.WriteLine($"Среднее арифметическое каждого столбца: {Math.Round(res, 2, MidpointRounding.ToZero)}");
