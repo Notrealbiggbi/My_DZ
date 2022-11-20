@@ -36,28 +36,62 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
     }
 }
 
-double AverageMatrixRndIntColums(int[,] matrix)
+// double AverageMatrixRndIntColums(int[,] matrix)
+// {
+//     double aver = 0;
+//     double sum = 0;
+//     for (int i = 0; i < matrix.GetLength(0); i++) // строки
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++) // столбцы
+//         {
+//             if ( i == j)
+//             {
+//                 sum = sum + matrix[i, 0];
+//             }
+
+//         }
+//     }
+//     aver = sum / matrix.GetLength(0);
+//     return  aver;
+// }
+
+double[] AverageMatrixRndIntColums(int[,] matrix)
 {
+    int size = matrix.GetLength(1);
+    double[] res = new double[size];
     double aver = 0;
     double sum = 0;
-    for (int i = 0; i < matrix.GetLength(0); i++) // строки
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++) // столбцы
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if ( i == j)
+            if (i == j)
             {
                 sum = sum + matrix[i, 0];
             }
-            
         }
     }
     aver = sum / matrix.GetLength(0);
-    return  aver;
+    // return new double[] { aver};
+    return res;
+}
+
+void PrintArray(double[] array) // создаём метод с выводом прошлого метода
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(Math.Round(array[i], 2, MidpointRounding.ToZero));
+        if (i < array.Length - 1) Console.Write(",");
+    }
+    Console.WriteLine("]");
 }
 
 
 int[,] mat = CreateMatrixRndInt(3, 3, 0, 10);
 PrintMatrix(mat);
-double res = AverageMatrixRndIntColums(mat);
-Console.WriteLine($"Среднее арифметическое первого столбца -> {Math.Round(res, 2, MidpointRounding.ToZero)}");
+double[] result = AverageMatrixRndIntColums(mat);
+PrintArray(result);
+// double res = AverageMatrixRndIntColums(mat);
+// Console.WriteLine($"Среднее арифметическое первого столбца -> {Math.Round(res, 2, MidpointRounding.ToZero)}");
 // Console.WriteLine($"Среднее арифметическое каждого столбца: {Math.Round(res, 2, MidpointRounding.ToZero)}");
