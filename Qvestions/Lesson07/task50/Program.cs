@@ -56,7 +56,7 @@ int FindMatrixElements(int num1, int num2, int[,] matrix)
 }
 
 
-int[,] mat = CreateMatrixRndInt(5, 2, -10, 10); // создаём переменную для запроса метода
+int[,] mat = CreateMatrixRndInt(5, 5, 1, 10); // создаём переменную для запроса метода
 PrintMatrix(mat); // печатаем метод
 
 Console.Write("Введите позицию элемента в двумерном массиве через запятую :  ");
@@ -65,7 +65,7 @@ int number1 = int.Parse(tokens[0]);
 int number2 = int.Parse(tokens[1]);
 
 int res = FindMatrixElements(number1, number2, mat);
-if (res > 0 || res < 0)
+if (res != 0)
 {
     Console.WriteLine($"{number1},{number2} -> эллемент равен {res}");
 }
