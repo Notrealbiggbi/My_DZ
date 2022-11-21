@@ -37,22 +37,22 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 }
 
 
-double[] SumMatrixRndIntColums(int[,] matrix)
+double[] AverageMatrixRndIntColums(int[,] matrix)
 {
-    double[] array = new double[matrix.GetLength(1)];
-    double sum = array[0];
+    double[] arrayAverage = new double[matrix.GetLength(1)];
+    double sum = arrayAverage[0];
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        array[j]= sum / matrix.GetLength(1);
+        arrayAverage[j]= sum / matrix.GetLength(1);
         sum = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         { 
             sum = sum + matrix[i, j];
         }
-        array[j]= sum / matrix.GetLength(1);
+        arrayAverage[j]= sum / matrix.GetLength(1);
     }
     
-    return array;
+    return arrayAverage;
 }
 
 void PrintArray(double[] array) // создаём метод с выводом прошлого метода
@@ -69,5 +69,5 @@ void PrintArray(double[] array) // создаём метод с выводом �
 
 int[,] mat = CreateMatrixRndInt(3, 3, 0, 10);
 PrintMatrix(mat);
-double[] result = SumMatrixRndIntColums(mat);
+double[] result = AverageMatrixRndIntColums(mat);
 PrintArray(result);

@@ -63,8 +63,7 @@ Console.Write("Введите позицию элемента в двумерн�
 string[] tokens = Console.ReadLine().Split(',');
 int number1 = int.Parse(tokens[0]);
 int number2 = int.Parse(tokens[1]);
-// int number1 = Convert.ToInt32(Console.ReadLine());
-// int number2 = Convert.ToInt32(Console.ReadLine());
+
 int res = FindMatrixElements(number1, number2, mat);
 if (res > 0 || res < 0)
 {
@@ -72,5 +71,3 @@ if (res > 0 || res < 0)
 }
 else Console.WriteLine($"{number1},{number2} -> такого элемента в массиве нет");
 
-// Console.WriteLine($"{num} -> такого элемента в массиве нет");
-// Console.WriteLine($"{num} -> эллемент {}");
