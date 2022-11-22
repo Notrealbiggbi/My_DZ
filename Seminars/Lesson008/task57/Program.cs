@@ -77,22 +77,6 @@ void CountElements(int[] array)
     Console.WriteLine($"элементов {elem}->{count}");
 }
 
-// void CountElements(int[] array)
-// {
-//     int elem = array[0];
-//     int count = 1;
-//     for (int i = 1; i < array.Length; i++)
-//     {
-//         if (elem == array[i]) count ++;
-//         else 
-//         {
-//             Console.WriteLine($"Элементов {elem} => {count}");
-//             elem = array[i];
-//             count=1;    
-//         }
-//     }
-//     Console.WriteLine($"Элементов {elem} => {count}");
-// }
 
 
 
