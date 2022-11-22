@@ -43,25 +43,24 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
     }
 }
 
-
-int[] NewArray(int[,] matrix)
+int[] MinElemArray(int[,] matrix)
 {
-    int min = matrix[0, 0];
-    int[] minIndex = new int[2];
+    int horizont = 0;
+    int vertical = 0;
+    int min = matrix[horizont,vertical];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (matrix[i, j] < min)
-            {
-                min = matrix[i, j];
-                minIndex[0] = i;
-                minIndex[1] = j;
-            }
-
-        }
+           if (min > matrix[i,j] ) 
+           {
+                min = matrix[i,j];
+                horizont = i;
+                vertical = j;
+           }
+        }   
     }
-    return minIndex;
+    return new int[] {horizont, vertical};
 }
 
 void PrintArray(int[] array) // создаём метод с выводом прошлого метода
@@ -75,92 +74,48 @@ void PrintArray(int[] array) // создаём метод с выводом пр
     Console.WriteLine("]");
 }
 
-int[,] NewMatrix(int[] NewArray, int[,] matrix)
-{
-    int count =0;
-    int[,] newMatrix = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        if (i != NewArray[0])
-        {
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                if (j != NewArray[1])
-                {
-                    newMatrix[i, j] = matrix[i, j];
-                }
-                count++;
 
+
+int[,] CreateMatrixMax(int[,] matrix, int m, int n)
+{
+    int[,] matrixMax = new int[matrix.GetLength(0)-1, matrix.GetLength(1)-1];
+    int countHor=0;
+    int countVer=0;
+    for (int i = 0; i < matrixMax.GetLength(0); i++)
+    {
+        if (countHor==m) countHor ++;
+        for (int j = 0; j < matrixMax.GetLength(1); j++)
+        {
+            if (countVer==n) countVer ++;
+            {
+                matrixMax[i, j] = matrix[countHor, countVer]; 
             }
+            countVer ++;               
         }
-    }
-    return newMatrix;
+        countVer = 0; 
+        countHor ++;
+    } 
+    return matrixMax;
 }
 
-
-
-
-int[,] mat = CreateMatrixRndInt(3, 3, 0, 10);
+Console.WriteLine("Введите размер строк массива: ");
+int number1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите размер столбцов массива: ");
+int number2 = Convert.ToInt32(Console.ReadLine());
+int[,] mat = CreateMatrixRndInt(number1, number2, 1, 10);
 PrintMatrix(mat);
 Console.WriteLine();
-int[] newArr = NewArray(mat);
-PrintArray(newArr);
-int[] newMat = NewMatrix(newArr,mat);
-PrintMatrix(newMat);
+
+int[] newMinElemArray = MinElemArray(mat);
+Console.WriteLine("одномерный массив , позиции ");
+PrintArray(newMinElemArray);
+Console.WriteLine();
+int[,] newMatrixMax = CreateMatrixMax(mat, newMinElemArray[0], newMinElemArray[1]);
+Console.WriteLine("массив в которой удален строки и столбцы, на пересечении которых расположен наименьший элемент массива.");
+PrintMatrix(newMatrixMax);
 
 
 
-// int[] MinElemArray(int[,] matrix)
-// {
-//     int horizont = 0;
-//     int vertical = 0;
-//     int min = matrix[horizont,vertical];
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//            if (min > matrix[i,j] ) 
-//            {
-//                 min = matrix[i,j];
-//                 horizont = i;
-//                 vertical = j;
-//            }
-//         }   
-//     }
-//     return new int[] {horizont, vertical};
-// }
-// int[,] CreateMatrixMax(int[,] matrix, int m, int n)
-// {
-//     int[,] matrixMax = new int[matrix.GetLength(0)-1, matrix.GetLength(1)-1];
-//     int countHor=0;
-//     int countVer=0;
-//     for (int i = 0; i < matrixMax.GetLength(0); i++)
-//     {
-//         if (countHor==m) countHor ++;
-//         for (int j = 0; j < matrixMax.GetLength(1); j++)
-//         {
-//             if (countVer==n) countVer ++;
-//             {
-//                 matrixMax[i, j] = matrix[countHor, countVer]; 
-//             }
-//             countVer ++;               
-//         }
-//         countVer = 0; 
-//         countHor ++;
-//     } 
-//     return matrixMax;
-// }
-// int[,] newMatrixRndInt = CreateMatrixRndInt(m, n, 1, 10);
-// Console.WriteLine("массив заполненный случайными целыми числами");
-// PrintMatrix(newMatrixRndInt);
-// Console.WriteLine();
-// int[] newMinElemArray = MinElemArray(newMatrixRndInt);
-// Console.WriteLine("одномерный массив , позиции ");
-// PrintArray(newMinElemArray);
-// Console.WriteLine();
-// int[,] newMatrixMax = CreateMatrixMax(newMatrixRndInt, newMinElemArray[0], newMinElemArray[1]);
-// Console.WriteLine("массив в которой удален строки и столбцы, на пересечении которых расположен наименьший элемент массива.");
-// PrintMatrix(newMatrixMax);
 
 
 // int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
@@ -176,7 +131,7 @@ PrintMatrix(newMat);
 //             {
 //                 matrix[i, j, k] = rnd.Next(min, max + 1); // 2 - 3
 //             }
-            
+
 //         }
 //     }
 //     return matrix;
