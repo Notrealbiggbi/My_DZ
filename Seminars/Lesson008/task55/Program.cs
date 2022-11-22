@@ -49,16 +49,21 @@ int[,] ReplaceRowsToColumns(int[,] matrix)
     return newMatrix;
 }
 
-// int[] NewArray(int[,] matrix)
+
+//Другой способ изменения не создавая новый массив
+// int[,] ReplaceRowsToColumns(int[,] matrix)
 // {
-
-//     if (matrixRnd.GetLength(0) == matrixRnd.GetLength(1))
+    
+//     for (int i = 0; i < matrix.GetLength(0); i++)
 //     {
-//         int[,] replaceMatrix = ReplaceRowsToColumns(matrixRnd);
-//         PrintMatrix(matrixRnd);
+//         for (int j = i; j < matrix.GetLength(1); j++)
+//         {
+//             int temp = matrix[i,j];
+//             matrix[i, j] = matrix[j, i];
+//             matrix[j, i] = temp;
+//         }
 //     }
-//     else Console.WriteLine("Вводите массив с равным количеством столбцов и строк");
-
+//     return matrix;
 // }
 
 Console.WriteLine("Введите размер строк массива: ");

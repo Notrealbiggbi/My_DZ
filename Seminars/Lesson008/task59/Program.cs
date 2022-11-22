@@ -97,6 +97,9 @@ int[,] NewMatrix(int[] NewArray, int[,] matrix)
     return newMatrix;
 }
 
+
+
+
 int[,] mat = CreateMatrixRndInt(3, 3, 0, 10);
 PrintMatrix(mat);
 Console.WriteLine();
