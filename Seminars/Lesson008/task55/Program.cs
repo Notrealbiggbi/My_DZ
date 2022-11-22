@@ -1,4 +1,6 @@
-﻿
+﻿//Задача 55: Задайте двумерный массив. 
+// Напишите программу, которая заменит все строки на столбцы. 
+// В случае если это невозможно программа должна вывести сообщение для пользователя.
 
 
 
@@ -34,31 +36,35 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 
 
 
-int[,] ReplaceRowsToColumns(int[,] matrix)
-{
-    int temp = default;
+// int[,] ReplaceRowsToColumns(int[,] matrix)
+// {
+//     int temp = default;
 
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = i; j < matrix.GetLength(1); j++)
-        {
-            temp = matrix[i, j];
-            matrix[i, j] = matrix[j, i];
-            matrix[j, i] = temp;
-        }
-    }
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = i; j < matrix.GetLength(1); j++)
+//         {
+//             temp = matrix[i, j];
+//             matrix[i, j] = matrix[j, i];
+//             matrix[j, i] = temp;
+//         }
+//     }
 
-    return matrix;
-}
+//     return matrix;
+// }
 
-int[] NewArray(int[,] matrix)
-{
+// int[] NewArray(int[,] matrix)
+// {
 
-}
+//     if (matrixRnd.GetLength(0) == matrixRnd.GetLength(1))
+//     {
+//         int[,] replaceMatrix = ReplaceRowsToColumns(matrixRnd);
+//         PrintMatrix(matrixRnd);
+//     }
+//     else Console.WriteLine("Вводите массив с равным количеством столбцов и строк");
 
-if (matrixRnd.GetLength(0) == matrixRnd.GetLength(1)) 
-{
-    int[,] replaceMatrix = ReplaceRowsToColumns(matrixRnd);
-    PrintMatrix(matrixRnd);
-}
-else Console.WriteLine("Вводите массив с равным количеством столбцов и строк");
+// }
+
+
+int[,] mat = CreateMatrixRndInt(3, 5, 0, 10);
+PrintMatrix(mat);
