@@ -36,22 +36,18 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 
 
 
-// int[,] ReplaceRowsToColumns(int[,] matrix)
-// {
-//     int temp = default;
-
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = i; j < matrix.GetLength(1); j++)
-//         {
-//             temp = matrix[i, j];
-//             matrix[i, j] = matrix[j, i];
-//             matrix[j, i] = temp;
-//         }
-//     }
-
-//     return matrix;
-// }
+int[,] ReplaceRowsToColumns(int[,] matrix)
+{
+    int[,] newMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            newMatrix[i, j] = matrix[j, i];
+        }
+    }
+    return newMatrix;
+}
 
 // int[] NewArray(int[,] matrix)
 // {
@@ -65,6 +61,19 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 
 // }
 
+Console.WriteLine("Введите размер строк массива: ");
+int number1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите размер столбцов массива: ");
+int number2 = Convert.ToInt32(Console.ReadLine());
 
-int[,] mat = CreateMatrixRndInt(3, 5, 0, 10);
-PrintMatrix(mat);
+int[,] mat = CreateMatrixRndInt(number1,number2 , 0, 10);
+if (mat.GetLength(0)==mat.GetLength(1))
+{
+    Console.WriteLine("массив заполненный случайными целыми числами");
+    PrintMatrix(mat);
+Console.WriteLine("массив заполненный случайными целыми числами в котором поменяны строуки и столбцы");
+int[,] res = ReplaceRowsToColumns(mat);
+PrintMatrix(res);
+}
+else Console.WriteLine("невозможно заменить строки на столбцы");
+
