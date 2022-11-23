@@ -70,22 +70,21 @@ void PrintArray(int[] array) // создаём метод с выводом пр
     Console.WriteLine("]");
 }
 
-void ComparisonElementsOfArray(int[] array)
+int ComparisonElementsOfArray(int[] array)
 {
     int min = array[0];
+    // int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
         
-        for (int j = 1; j < array.Length; j++)
+        if (min > array[i])
         {
-           if (array[i] > array[j])
-        {
-            min = j;
-        } 
+            min = array[i];  
         }
         
+        
     }
-    Console.WriteLine($"Самая маленькая сумма в строке с суммой  {min}"); 
+    return min;
 }
 
 Console.WriteLine("Введите размер строк массива: ");
@@ -98,4 +97,5 @@ PrintMatrix(mat);
 Console.WriteLine();
 int[] sum = SumMatrixRowsArray(mat);
 PrintArray(sum);
-ComparisonElementsOfArray(sum);
+int res = ComparisonElementsOfArray(sum);
+Console.WriteLine($"Самая маленькая сумма в строке с суммой  {res}");
