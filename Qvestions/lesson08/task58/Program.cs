@@ -37,26 +37,32 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
     }
 }
 
-int[,] StreamlineElementsOfRowsMatrix(int[,] matrix, int[,]matrix2)
-{  
-    int[,] thirdMatrix = new int[matrix.GetLength(0),matrix.GetLength(1)];
+int[,] StreamlineElementsOfRowsMatrix(int[,] matrix, int[,] matrix2)
+{
+    int[,] thirdMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
     int streamline = 0;
     int sumMatrix = 0;
-    for (int x = 0; x <= matrix.GetLength(1); x++)
-    { 
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int x = 0; x < matrix.GetLength(1); x++)
     {
-        thirdMatrix[i,x]=sumMatrix;
-        streamline = 0;
-        for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+        thirdMatrix[0, x] = sumMatrix;
+        for (int y = 0; y < matrix.GetLength(0); y++)
         {
-            streamline = matrix[0,j] * matrix2[i,0];
-            sumMatrix =  sumMatrix + streamline; 
+            thirdMatrix[y, 0] = sumMatrix;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                thirdMatrix[i, x] = sumMatrix;
 
+                for (int j = 0; j < matrix2.GetLength(1); j++)
+                {
+                    streamline = matrix[0, j] * matrix2[i, 0];
+                    sumMatrix = sumMatrix + streamline;
+
+                }
+
+            }
+            y++;
         }
-
-    }
-    x++;
+        x++;
     }
     return thirdMatrix;
 }
@@ -76,5 +82,5 @@ PrintMatrix(mat);
 Console.WriteLine();
 PrintMatrix(newMat);
 Console.WriteLine();
-int[,] res = StreamlineElementsOfRowsMatrix(mat,newMat);
+int[,] res = StreamlineElementsOfRowsMatrix(mat, newMat);
 PrintMatrix(res);
