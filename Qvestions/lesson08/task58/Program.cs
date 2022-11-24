@@ -41,26 +41,21 @@ int[,] StreamlineElementsOfRowsMatrix(int[,] matrix, int[,] matrix2)
 {
     int[,] thirdMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
     int streamline = 0;
-    int sumMatrix = 0;
+    int sum = 0;
     for (int x = 0; x < matrix.GetLength(1); x++)
     {
-        thirdMatrix[0, x] = sumMatrix;
         for (int y = 0; y < matrix.GetLength(0); y++)
         {
-            thirdMatrix[y, 0] = sumMatrix;
+           thirdMatrix[x, y] = streamline;
             for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                thirdMatrix[i, x] = sumMatrix;
-
+            {  
                 for (int j = 0; j < matrix2.GetLength(1); j++)
                 {
-                    streamline = matrix[0, j] * matrix2[i, 0];
-                    sumMatrix = sumMatrix + streamline;
+                    streamline = matrix[i, 0] * matrix2[0, j];
+                    sum = sum + streamline;
 
                 }
-
-            }
-            y++;
+            } 
         }
         x++;
     }
