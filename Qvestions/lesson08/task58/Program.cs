@@ -40,16 +40,18 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 int[,] StreamlineElementsOfRowsMatrix(int[,] matrix, int[,]matrix2)
 {  
     int[,] thirdMatrix = new int[matrix.GetLength(0),matrix.GetLength(1)];
-    int streamline = thirdMatrix[0,0];
+    int streamline = 0;
+    int sumMatrix = 0;
     for (int x = 0; x <= matrix.GetLength(1); x++)
     { 
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        thirdMatrix[i,x]=strieamline;
+        thirdMatrix[i,x]=sumMatrix;
         streamline = 0;
         for (int j = 0; j < matrix.GetLength(1) - 1; j++)
         {
             streamline = matrix[0,j] * matrix2[i,0];
+            sumMatrix =  sumMatrix + streamline; 
 
         }
 
