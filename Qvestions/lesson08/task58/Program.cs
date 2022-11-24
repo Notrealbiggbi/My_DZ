@@ -39,26 +39,24 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 
 int[,] StreamlineElementsOfRowsMatrix(int[,] matrix, int[,] matrix2)
 {
-    int[,] thirdMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
-    int streamline = 0;
+    int num1 = 0;
+    int num2 = 0;
+    int[,] thirdMatrix = new int[num1,num2];
     int sum = 0;
-    for (int x = 0; x < matrix.GetLength(1); x++)
+    for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        for (int y = 0; y < matrix.GetLength(0); y++)
-        {
-           thirdMatrix[x, y] = streamline;
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {  
-                for (int j = 0; j < matrix2.GetLength(1); j++)
-                {
-                    streamline = matrix[i, 0] * matrix2[0, j];
-                    sum = sum + streamline;
 
-                }
-            } 
+        sum = 0;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            thirdMatrix[num1,num2] = matrix[i, j] * matrix2[0, 0] + matrix[0, 1] * matrix2[1, 0];
+            sum = thirdMatrix[i, j];
+
         }
-        x++;
+        
     }
+    num1++;
+    num2++;
     return thirdMatrix;
 }
 
@@ -71,11 +69,11 @@ int number3 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите размер столбцов второй матрицы: ");
 int number4 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
-int[,] mat = CreateMatrixRndInt(number1, number2, 1, 10);
-int[,] newMat = CreateMatrixRndInt(number3, number4, 1, 10);
+int[,] mat = CreateMatrixRndInt(number1, number2, 1, 4);
+int[,] newMat = CreateMatrixRndInt(number3, number4, 1, 4);
 PrintMatrix(mat);
 Console.WriteLine();
 PrintMatrix(newMat);
-Console.WriteLine();
+Console.WriteLine("произведение двух матриц");
 int[,] res = StreamlineElementsOfRowsMatrix(mat, newMat);
 PrintMatrix(res);
