@@ -74,17 +74,20 @@ int ComparisonElementsOfArray(int[] array)
 {
     int min = array[0];
     // int count = 0;
+    int minind = 0;
     for (int i = 0; i < array.Length; i++)
     {
         
         if (min > array[i])
         {
-            min = array[i];  
+            min = array[i];
+            minind =i; 
+
         }
         
         
     }
-    return min;
+    return minind+1;
 }
 
 Console.WriteLine("Введите размер строк массива: ");
@@ -98,4 +101,4 @@ Console.WriteLine();
 int[] sum = SumMatrixRowsArray(mat);
 PrintArray(sum);
 int res = ComparisonElementsOfArray(sum);
-Console.WriteLine($"Самая маленькая сумма в строке с суммой  {res}");
+Console.WriteLine($"Самая маленькая сумма в строке  {res}");
