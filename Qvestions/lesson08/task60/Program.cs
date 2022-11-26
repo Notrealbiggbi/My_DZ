@@ -12,7 +12,7 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
     int number;
     for (int i = 0; i < arrayRandom.GetLength(0); i++)
     {
-        arrayRandom[i] = new Random().Next(10, 100);
+        arrayRandom[i] = rnd.Next(10, 100);
         number = arrayRandom[i];
         if (i >= 1)
         {
@@ -20,7 +20,7 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
             {
                 while (arrayRandom[i] == arrayRandom[j])
                 {
-                    arrayRandom[i] = new Random().Next(10, 100);
+                    arrayRandom[i] = rnd.Next(10, 100);
                     j = 0;
                     number = arrayRandom[i];
                 }
@@ -48,13 +48,13 @@ void PrintMatrix(int[,,] matrix)// создаём метод с выводом �
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        
+
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            
+
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                if (k < matrix.GetLength(2)-1 ) Console.Write($"|{matrix[i, j, k],5}({i},{j},{k})  |");
+                if (k < matrix.GetLength(2) - 1) Console.Write($"|{matrix[i, j, k],5}({i},{j},{k})  |");
                 else Console.Write($"{matrix[i, j, k],5}({i},{j},{k}) ");
             }
 
