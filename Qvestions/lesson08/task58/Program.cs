@@ -39,38 +39,35 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 
 int[,] StreamlineElementsOfRowsMatrix(int[,] matrix, int[,] matrix2)
 {
-    int num1 = 0;
-    int num2 = 0;
-    int[,] thirdMatrix = new int[num1,num2];
-    int sum = 0;
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    int num1 = matrix.GetLength(0);
+    int num2 = matrix2.GetLength(1);
+    int[,] thirdMatrix = new int[num1, num2];
+    for (int i = 0; i < thirdMatrix.GetLength(0); i++)
     {
-
-        sum = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        for (int j = 0; j < thirdMatrix.GetLength(1); j++)
         {
-            thirdMatrix[num1,num2] = matrix[i, j] * matrix2[0, 0] + matrix[0, 1] * matrix2[1, 0];
-            sum = thirdMatrix[i, j];
+            int sum = 0;
+            for (int k = 0; k < matrix.GetLength(1); k++)
+            {
+                sum += matrix[i, k] * matrix2[k, j];
 
+            }
+            thirdMatrix[i, j] = sum;
         }
-        
     }
-    num1++;
-    num2++;
     return thirdMatrix;
 }
 
 Console.WriteLine("Введите размер строк первой матрицы: ");
 int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите размер столбцов первой матрицы: ");
+Console.WriteLine("Введите размер столбцов первой матрицы(и строк 2): ");
 int number2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите размер строк второй матрицы: ");
-int number3 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите размер столбцов второй матрицы: ");
-int number4 = Convert.ToInt32(Console.ReadLine());
+int number3 = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine();
 int[,] mat = CreateMatrixRndInt(number1, number2, 1, 4);
-int[,] newMat = CreateMatrixRndInt(number3, number4, 1, 4);
+int[,] newMat = CreateMatrixRndInt(number2, number3, 1, 4);
 PrintMatrix(mat);
 Console.WriteLine();
 PrintMatrix(newMat);
