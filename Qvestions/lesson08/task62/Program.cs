@@ -6,19 +6,29 @@
 // 10 09 08 07
 
 
-int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) // создаём метод где используем расчёт двумерного массива с случайными числами
+int[,] CreateMatrixRndInt(int rows, int columns) // создаём метод где используем расчёт двумерного массива с случайными числами
 {
-    Random rnd = new Random();
-    int[,] matrix = new int[rows, columns];
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            matrix[i, j] = rnd.Next(min, max + 1);
-        }
+    
+    int[,] sqareMatrix = new int[rows, columns];
 
+    int temp = 1;
+    int i = 0;
+    int j = 0;
+
+    while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+    {
+        sqareMatrix[i, j] = temp;
+        temp++;
+        if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
+            j++;
+        else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
+            i++;
+        else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
+            j--;
+        else
+            i--;
     }
-    return matrix;
+    return sqareMatrix;
 }
 
 void PrintMatrix(int[,] matrix)// создаём метод с выводом прошлого метода
@@ -36,10 +46,6 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 }
 
 
-Console.WriteLine("Введите размер строк матрицы: ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите размер столбцов матрицы: ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine();
-int[,] mat = CreateMatrixRndInt(number1, number2, 0, 10);
+
+int[,] mat = CreateMatrixRndInt(5,5);
 PrintMatrix(mat);
