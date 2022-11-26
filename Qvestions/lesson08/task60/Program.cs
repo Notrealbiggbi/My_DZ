@@ -8,14 +8,35 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
 {
     int[,,] matrix = new int[rows, columns, depth];
     Random rnd = new Random();
-
-    for (int i = 0; i < matrix.GetLength(0); i++) // высота
+    int[] arrayRandom = new int[matrix.GetLength(0) * matrix.GetLength(1) * matrix.GetLength(2)];
+    int number;
+    for (int i = 0; i < arrayRandom.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++) // ширина
+        arrayRandom[i] = new Random().Next(10, 100);
+        number = arrayRandom[i];
+        if (i >= 1)
         {
-            for (int k = 0; k < matrix.GetLength(2); k++) //глубина
+            for (int j = 0; j < i; j++)
             {
-                matrix[i, j, k] = rnd.Next((min + 10) + max - 10);
+                while (arrayRandom[i] == arrayRandom[j])
+                {
+                    arrayRandom[i] = new Random().Next(10, 100);
+                    j = 0;
+                    number = arrayRandom[i];
+                }
+                number = arrayRandom[i];
+            }
+        }
+    }
+    int count = 0;
+    for (int x = 0; x < matrix.GetLength(0); x++) // высота
+    {
+        for (int y = 0; y < matrix.GetLength(1); y++) // ширина
+        {
+            for (int z = 0; z < matrix.GetLength(2); z++) //глубина
+            {
+                matrix[x, y, z] = arrayRandom[count];
+                count++;
             }
 
         }
@@ -27,18 +48,18 @@ void PrintMatrix(int[,,] matrix)// создаём метод с выводом �
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-
+        
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-
+            
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                if (k < matrix.GetLength(2) - 1) Console.Write($"|{matrix[i, j, k],5}  |");
-                else Console.Write($"{matrix[i, j, k],5} ");
+                if (k < matrix.GetLength(2)-1 ) Console.Write($"|{matrix[i, j, k],5}({i},{j},{k})  |");
+                else Console.Write($"{matrix[i, j, k],5}({i},{j},{k}) ");
             }
 
         }
-        Console.WriteLine(" |");
+        Console.WriteLine("  |");
     }
 
 }
