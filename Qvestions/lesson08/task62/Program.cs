@@ -47,5 +47,5 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 
 
 
-int[,] mat = CreateMatrixRndInt(5,5);
+int[,] mat = CreateMatrixRndInt(4,4);
 PrintMatrix(mat);
