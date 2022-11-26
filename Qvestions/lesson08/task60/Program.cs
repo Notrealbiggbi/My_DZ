@@ -12,7 +12,7 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
     int number;
     for (int i = 0; i < arrayRandom.GetLength(0); i++)
     {
-        arrayRandom[i] = rnd.Next(10, 100);
+        arrayRandom[i] = rnd.Next(min, max);
         number = arrayRandom[i];
         if (i >= 1)
         {
@@ -20,7 +20,7 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
             {
                 while (arrayRandom[i] == arrayRandom[j])
                 {
-                    arrayRandom[i] = rnd.Next(10, 100);
+                    arrayRandom[i] = rnd.Next(min, max);
                     j = 0;
                     number = arrayRandom[i];
                 }
