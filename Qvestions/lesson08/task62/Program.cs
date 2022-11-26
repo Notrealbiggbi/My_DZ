@@ -6,7 +6,7 @@
 // 10 09 08 07
 
 
-int[,] CreateMatrixRndInt(int rows, int columns) // создаём метод где используем расчёт двумерного массива с случайными числами
+int[,] CreateMatrixRndInt(int rows, int columns) // создаём метод где используем расчёт двумерного массива 
 {
     
     int[,] sqareMatrix = new int[rows, columns];
