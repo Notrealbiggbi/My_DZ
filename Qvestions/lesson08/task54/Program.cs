@@ -38,25 +38,25 @@ void PrintMatrix(int[,] matrix)// создаём метод с выводом п
 }
 
 void StreamlineElementsOfRowsMatrix(int[,] matrix)
-{  
+{
     for (int x = 0; x <= matrix.GetLength(1); x++)
-    { 
-    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-
-        for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            if (matrix[i, j] < matrix[i, j + 1])
+
+            for (int j = 0; j < matrix.GetLength(1) - 1; j++)
             {
-                int min = matrix[i, j];
-                matrix[i, j] = matrix[i, j + 1];
-                matrix[i, j + 1] = min;
+                if (matrix[i, j] < matrix[i, j + 1])
+                {
+                    int min = matrix[i, j];
+                    matrix[i, j] = matrix[i, j + 1];
+                    matrix[i, j + 1] = min;
+                }
+
             }
 
         }
-        
-    }
-    x++;
+        x++;
     }
 }
 
