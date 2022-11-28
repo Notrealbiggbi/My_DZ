@@ -8,14 +8,14 @@ int numM = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число N: ");
 int numN = Convert.ToInt32(Console.ReadLine());
 int temp = numM;
-if (numM > numN)
+if (numM > numN) 
 {
     numM = numN;
     numN = temp;
 }
-void SumElements(int m, int n, int sum)
+void SumElements(int m, int n, int sum) 
 {
-    sum = sum + n;
+    sum = sum + n; 
     if (n <= m)
     {
         Console.Write($"Сумма элементов = {sum} ");
