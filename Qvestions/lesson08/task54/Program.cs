@@ -61,6 +61,7 @@ void StreamlineElementsOfRowsMatrix(int[,] matrix)
 }
 
 
+
 Console.WriteLine("Введите размер строк массива: ");
 int number1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите размер столбцов массива: ");
