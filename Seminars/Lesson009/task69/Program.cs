@@ -14,9 +14,9 @@ int Exponetion(int a, int b)
     return a * Exponetion(a, b - 1);
 }
 
-if (numB < 0)
+while (numB < 0)
 {
-    Console.WriteLine("Введено отрицательное число или 0! ");
+    Console.WriteLine("Введено отрицательное число  ");
     Console.WriteLine("Введите положительное число B: ");
     numB = Convert.ToInt32(Console.ReadLine());
 }
