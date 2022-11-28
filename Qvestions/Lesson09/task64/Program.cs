@@ -6,11 +6,12 @@
 Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-void NaturalNumbers (int num)
+void NaturalNumbers(int num)
 {
-    if(num==0) return;
-    Console.Write($"{num} ");
-    NaturalNumbers(num -1);
-    
+    if (num == 0) return;
+    if (num == 1) Console.Write($"{num}");
+    else Console.Write($"{num}, ");
+    NaturalNumbers(num - 1);
+
 }
 NaturalNumbers(number);
